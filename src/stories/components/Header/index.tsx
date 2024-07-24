@@ -19,7 +19,7 @@ export const Header = ({
   onCreateAccount,
   imageUrl = "https://cdn-icons-png.flaticon.com/512/74/74472.png",
 }: HeaderProps) => (
-  <header className=" text-black py-4 px-4 md:px-6 lg:px-8">
+  <header className=" text-black py-4 px-4 md:px-6 lg:px-8 border-b-2">
     <div className="container mx-auto flex flex-wrap justify-between items-center">
       <div className="flex items-center space-x-4">
         <img
