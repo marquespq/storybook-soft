@@ -1,3 +1,9 @@
 export { Button } from "./src/stories/components/Button";
 export { Header } from "./src/stories/components/Header";
 export { Col } from "./src/stories/components/Col";
+export { Row } from "./src/stories/components/Row";
+export { Section } from "./src/stories/components/Section";
+export { Select } from "./src/stories/components/Select";
+export { MultiSelect } from "./src/stories/components/MultiSelect";
+export { Table } from "./src/stories/components/Table";
+export { Input } from "./src/stories/components/Input";
