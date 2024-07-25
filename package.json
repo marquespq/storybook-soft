@@ -23,13 +23,17 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "release": "bash ./scripts/release.sh",
+    "build": "tsc && vite build && npm run tailwind",
+    "tailwind": "npx tailwindcss -o ./dist/index.css --minify",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
+    "test": "vitest",
+    "test:run": "vitest --run",
+    "prepare": "husky install",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "release": "sh ./scripts/release.sh",
-    "chromatic": "npx chromatic --project-token=chpt_f375bf038c62d65"
+    "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
   },
   "dependencies": {
     "react": "^18.3.1",
