@@ -1,13 +1,13 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
-import { Header } from '.';
+import type { Meta, StoryObj } from "@storybook/react";
+import { fn } from "@storybook/test";
+import { Header } from ".";
 
 const meta = {
-  title: 'Example/Header',
+  title: "Components/Header",
   component: Header,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   parameters: {
-    layout: 'fullscreen',
+    layout: "fullscreen",
   },
   args: {
     onLogin: fn(),
@@ -22,7 +22,7 @@ type Story = StoryObj<typeof meta>;
 export const LoggedIn: Story = {
   args: {
     user: {
-      name: 'Jane Doe',
+      name: "Jane Doe",
     },
   },
 };
@@ -32,8 +32,9 @@ export const LoggedOut: Story = {};
 export const CustomImage: Story = {
   args: {
     user: {
-      name: 'Jane Doe',
+      name: "Jane Doe",
     },
-    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIP1WY07exNBXDdKoy75b5NDZXkfWmE9Y1BQ&s',
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIP1WY07exNBXDdKoy75b5NDZXkfWmE9Y1BQ&s",
   },
 };

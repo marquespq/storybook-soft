@@ -1,25 +1,13 @@
 export interface ButtonProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
   variant?: "primary" | "secondary" | "success" | "danger";
-  /**
-   * How large should the button be?
-   */
+
   size?: "small" | "medium" | "large";
-  /**
-   * Button contents
-   */
+
   label: string;
-  /**
-   * Optional click handler
-   */
+
   onClick?: () => void;
 }
 
-/**
- * Primary UI component for user interaction
- */
 export const Button = ({
   variant = "primary",
   size = "medium",
