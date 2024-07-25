@@ -1,6 +1,6 @@
 import React from "react";
 import { StoryFn, Meta } from "@storybook/react";
-import MultiSelect, { MultiSelectProps } from ".";
+import { MultiSelect, MultiSelectProps } from ".";
 
 export default {
   title: "Components/MultiSelect",

@@ -10,7 +10,7 @@ export interface SelectProps {
   title?: string;
 }
 
-const Select: React.FC<SelectProps> = ({
+export const Select: React.FC<SelectProps> = ({
   options,
   value,
   onChange,
@@ -87,5 +87,3 @@ const Select: React.FC<SelectProps> = ({
     </div>
   );
 };
-
-export default Select;

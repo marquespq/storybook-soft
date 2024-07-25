@@ -1,5 +1,5 @@
 import { Meta, StoryFn } from "@storybook/react";
-import Input, { InputProps } from ".";
+import { Input, InputProps } from ".";
 import { useState } from "react";
 
 export default {

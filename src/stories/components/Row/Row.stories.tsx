@@ -1,5 +1,5 @@
 import { StoryFn, Meta } from "@storybook/react";
-import Row, { RowProps } from ".";
+import { Row, RowProps } from ".";
 
 export default {
   title: "Components/Row",

@@ -10,7 +10,7 @@ export interface ColProps {
   className?: string;
 }
 
-const Col: React.FC<ColProps> = ({
+export const Col: React.FC<ColProps> = ({
   children,
   xs,
   sm,
@@ -32,5 +32,3 @@ const Col: React.FC<ColProps> = ({
 
   return <div className={classes}>{children}</div>;
 };
-
-export default Col;

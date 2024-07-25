@@ -8,7 +8,7 @@ export interface MultiSelectProps {
   disabled?: boolean;
 }
 
-const MultiSelect: React.FC<MultiSelectProps> = ({
+export const MultiSelect: React.FC<MultiSelectProps> = ({
   options,
   values,
   onChange,
@@ -89,5 +89,3 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
     </div>
   );
 };
-
-export default MultiSelect;

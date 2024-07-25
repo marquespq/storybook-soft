@@ -13,7 +13,7 @@ export interface TableProps {
   expandedContent: (row: string[]) => React.ReactNode;
 }
 
-const Table: React.FC<TableProps> = ({
+export const Table: React.FC<TableProps> = ({
   headers,
   rows,
   theme,
@@ -167,5 +167,3 @@ const Table: React.FC<TableProps> = ({
     </div>
   );
 };
-
-export default Table;

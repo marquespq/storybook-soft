@@ -1,5 +1,5 @@
 import { StoryFn, Meta } from "@storybook/react";
-import Col, { ColProps } from ".";
+import { ColProps, Col } from ".";
 
 export default {
   title: "Components/Col",

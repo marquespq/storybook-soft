@@ -8,7 +8,7 @@ export interface InputProps {
   type?: string;
 }
 
-const Input: React.FC<InputProps> = ({
+export const Input: React.FC<InputProps> = ({
   value,
   onChange,
   placeholder = "",
@@ -22,4 +22,3 @@ const Input: React.FC<InputProps> = ({
     className="border border-gray-300 p-2 rounded"
   />
 );
-export default Input;

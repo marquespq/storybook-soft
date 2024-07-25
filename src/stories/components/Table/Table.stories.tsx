@@ -1,5 +1,5 @@
 import { StoryFn, Meta } from "@storybook/react";
-import Table, { TableProps } from ".";
+import { Table, TableProps } from ".";
 
 export default {
   title: "Components/Table",

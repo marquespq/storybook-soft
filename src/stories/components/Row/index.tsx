@@ -6,7 +6,11 @@ export interface RowProps {
   gutters?: "none" | "sm" | "md" | "lg";
 }
 
-const Row: React.FC<RowProps> = ({ children, className, gutters = "none" }) => {
+export const Row: React.FC<RowProps> = ({
+  children,
+  className,
+  gutters = "none",
+}) => {
   let gutterClass = "";
   switch (gutters) {
     case "sm":
@@ -28,5 +32,3 @@ const Row: React.FC<RowProps> = ({ children, className, gutters = "none" }) => {
     </div>
   );
 };
-
-export default Row;
