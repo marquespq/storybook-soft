@@ -34,6 +34,6 @@ export const CustomImage: Story = {
     user: {
       name: 'Jane Doe',
     },
-    imageUrl: 'https://cdn-icons-png.flaticon.com/512/74/74472.png',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIP1WY07exNBXDdKoy75b5NDZXkfWmE9Y1BQ&s',
   },
 };
