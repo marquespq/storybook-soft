@@ -50,12 +50,12 @@ PasswordType.args = {
   type: "password",
 };
 
-export const CustomPlaceholder = Template.bind({});
-CustomPlaceholder.args = {
-  id: "custom-placeholder-input",
+export const CustomInput = Template.bind({});
+CustomInput.args = {
+  id: "custom-input",
   label: "Nome",
   ariaLabel: "Nome label",
-  ariaDescribedby: "custom-placeholder-input-description",
+  ariaDescribedby: "custom-input-description",
   placeholder: "Digite seu nome",
   className: "block text-gray-300 text-sm font-bold mb-2",
 };

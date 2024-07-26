@@ -34,7 +34,11 @@ export const Input: React.FC<InputProps> = ({
       value={value}
       onChange={onChange}
       placeholder={placeholder}
-      className={className ? className : "block text-gray-700 text-sm  mb-2"}
+      className={
+        className
+          ? className
+          : "w-full h-10 pl-4 pr-10 text-sm leading-5 text-gray-800 rounded-md border border-gray-200 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+      }
       id={id}
       aria-label={ariaLabel}
       aria-describedby={ariaDescribedby}

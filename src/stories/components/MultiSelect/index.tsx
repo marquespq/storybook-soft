@@ -75,7 +75,11 @@ export const MultiSelect: React.FC<MultiSelectProps> = ({
           value={values.join(", ")}
           onChange={(e) => {}}
           placeholder={placeholder}
-          className={className}
+          className={
+            className
+              ? className
+              : "w-full h-10 pl-4 pr-10 text-sm leading-5 text-gray-800 rounded-md border border-gray-200 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          }
           onClick={handleToggle}
           disabled={disabled}
           aria-label={ariaLabel}
@@ -100,15 +104,15 @@ export const MultiSelect: React.FC<MultiSelectProps> = ({
       </div>
       {isOpen && (
         <ul
-          className="absolute z-10 w-full bg-white border border-gray-300 rounded-b-md shadow-sm"
+          className="absolute z-10 w-full bg-white border border-gray-300 rounded-b-md shadow-sm py-2 overflow-y-auto max-h-48"
           role="listbox"
           aria-multiselectable="true"
         >
           {options.map((option) => (
             <li
               key={option.value}
-              className={`text-sm leading-5 text-gray-700 hover:bg-gray-100 ${
-                selectedOptions.includes(option) ? "bg-gray-100" : ""
+              className={`text-sm leading-5 text-gray-700 py-2 px-4 hover:bg-gray-100 cursor-pointer transition duration-300 ease-in-out ${
+                selectedOptions.includes(option) ? "bg-gray-300 font-bold" : ""
               }`}
               onClick={() => handleOptionClick(option)}
               role="option"

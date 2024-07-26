@@ -57,7 +57,7 @@ export const Select: React.FC<SelectProps> = ({
           className={
             className
               ? className
-              : "w-full pl-3 pr-10 py-2 text-sm leading-5 text-gray-700"
+              : "w-full h-10 pl-4 pr-10 text-sm leading-5 text-gray-800 rounded-md border border-gray-200 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           }
           onClick={handleToggle}
           disabled={disabled}
@@ -83,13 +83,13 @@ export const Select: React.FC<SelectProps> = ({
       </div>
       {isOpen && (
         <ul
-          className="absolute z-10 w-full bg-white border border-gray-300 rounded-b-md shadow-sm"
+          className="absolute z-10 w-full bg-white border border-gray-300 rounded-b-md shadow-sm py-2 overflow-y-auto max-h-48"
           role="listbox"
         >
           {options.map((option) => (
             <li
               key={option.value}
-              className="text-sm leading-5 text-gray-700 hover:bg-gray-100"
+              className="text-sm leading-5 text-gray-700 py-2 px-4 hover:bg-gray-100 cursor-pointer transition duration-300 ease-in-out"
               onClick={() => handleOptionClick(option.value)}
               role="option"
               aria-selected={option.value === value}
