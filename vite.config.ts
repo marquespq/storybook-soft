@@ -8,7 +8,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, "index.ts"),
-      name: "react-soft-ui",
+      name: "react-ui-softscript",
       fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {

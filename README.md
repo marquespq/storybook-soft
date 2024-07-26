@@ -1,13 +1,13 @@
-# react-soft-ui
+# react-ui-softscript
 
-react-soft-ui is a component library with React, Typescript and Tailwind CSS.
+react-ui-softscript is a component library with React, Typescript and Tailwind CSS.
 
 Installation
 
-To install react-soft-ui, run:
+To install react-ui-softscript, run:
 
 ```bash
-  npm install react-soft-ui
+  npm install react-ui-softscript
 
 ```
 
@@ -18,7 +18,7 @@ To use storybook-soft in your project, follow these steps:
 1 - Import the CSS file at the root of your project:
 
 ```bash
-   import 'react-soft-ui/dist/index.css'
+   import 'react-ui-softscript/dist/index.css'
 ```
 
 2 - Use the components from the library in your React project.
