@@ -1,3 +1,5 @@
+import * as React from "react";
+
 export interface ButtonProps {
   variant?: "primary" | "secondary" | "success" | "danger";
   size?: "small" | "medium" | "large";
