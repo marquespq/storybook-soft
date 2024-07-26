@@ -1,7 +1,7 @@
 {
   "name": "storybook-soft",
   "private": false,
-  "version": "3.0.1",
+  "version": "3.0.2",
   "type": "module",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
@@ -32,7 +32,7 @@
     "test:run": "vitest --run",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
+    "chromatic": "bash ./scripts/update-chromatic.sh"
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.5.7",

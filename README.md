@@ -2,6 +2,10 @@
 
 storybook-soft is a component library with React, Typescript and Tailwind CSS.
 
+Installation
+
+To install storybook-soft, run:
+
 ```bash
   npm install storybook-soft
 
@@ -9,12 +13,16 @@ storybook-soft is a component library with React, Typescript and Tailwind CSS.
 
 ## Usage
 
-- Add the `index.css` file to the root of your project.
+To use storybook-soft in your project, follow these steps:
+
+1 - Import the CSS file at the root of your project:
 
 ```bash
    import 'storybook-soft/dist/index.css'
 ```
 
-## Doc
+2 - Use the components from the library in your React project.
 
-- [Components Link](https://66a27aa440e683266d789380-xmjgnkrzuy.chromatic.com/)
+## Documentation
+
+For detailed information on the available components and their usage, visit the - [Components Link](https://66a27aa440e683266d789380-nncepjmnmi.chromatic.com/)
