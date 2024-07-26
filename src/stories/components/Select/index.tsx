@@ -7,8 +7,9 @@ export interface SelectProps {
   placeholder?: string;
   disabled?: boolean;
   isClearable?: boolean;
-  title?: string;
+  label?: string;
   ariaLabel?: string;
+  className?: string;
 }
 
 export const Select: React.FC<SelectProps> = ({
@@ -18,8 +19,9 @@ export const Select: React.FC<SelectProps> = ({
   placeholder,
   disabled,
   isClearable,
-  title,
+  label,
   ariaLabel,
+  className,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -38,7 +40,7 @@ export const Select: React.FC<SelectProps> = ({
 
   return (
     <div className="relative">
-      <span>{title}</span>
+      <label>{label}</label>
       <div
         className={`bg-white border border-gray-300 rounded-md shadow-sm ${
           isOpen ? "rounded-b-none" : ""
@@ -52,7 +54,11 @@ export const Select: React.FC<SelectProps> = ({
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
-          className="w-full pl-3 pr-10 py-2 text-sm leading-5 text-gray-700"
+          className={
+            className
+              ? className
+              : "w-full pl-3 pr-10 py-2 text-sm leading-5 text-gray-700"
+          }
           onClick={handleToggle}
           disabled={disabled}
           aria-autocomplete="list"
@@ -61,7 +67,7 @@ export const Select: React.FC<SelectProps> = ({
         {isClearable && value && (
           <button
             type="button"
-            className="absolute inset-y-0 right-0 flex items-center pr-2 pt-6"
+            className={`absolute inset-y-0 right-0 flex items-center pr-2 ${label && "pt-6"}`}
             onClick={handleClear}
           >
             <svg

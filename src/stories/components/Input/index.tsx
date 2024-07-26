@@ -7,6 +7,8 @@ export interface InputProps {
   label: string;
   ariaLabel?: string;
   ariaDescribedby?: string;
+  className?: string;
+  labelClassName?: string;
 }
 
 export const Input: React.FC<InputProps> = ({
@@ -18,9 +20,11 @@ export const Input: React.FC<InputProps> = ({
   label,
   ariaLabel,
   ariaDescribedby,
+  className,
+  labelClassName,
 }) => (
   <div>
-    <label htmlFor={id} className="block text-gray-700 text-sm font-bold mb-2">
+    <label htmlFor={id} className={labelClassName}>
       {label}
     </label>
     <input
@@ -28,7 +32,7 @@ export const Input: React.FC<InputProps> = ({
       value={value}
       onChange={onChange}
       placeholder={placeholder}
-      className="border border-gray-300 p-2 rounded"
+      className={className ? className : "block text-gray-700 text-sm  mb-2"}
       id={id}
       aria-label={ariaLabel}
       aria-describedby={ariaDescribedby}

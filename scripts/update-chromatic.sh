@@ -14,7 +14,7 @@ echo "URL do Chromatic encontrada: $url"
 readme="README.md"
 temp_readme="README_temp.md"
 
-sed "s|https://[^\)]+|$url|" $readme > $temp_readme
+sed -i "s|https://[^\)]\+|$url|" $readme
 
 mv $temp_readme $readme
 

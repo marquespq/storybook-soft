@@ -57,4 +57,5 @@ CustomPlaceholder.args = {
   ariaLabel: "Nome label",
   ariaDescribedby: "custom-placeholder-input-description",
   placeholder: "Digite seu nome",
+  className: "block text-gray-300 text-sm font-bold mb-2",
 };

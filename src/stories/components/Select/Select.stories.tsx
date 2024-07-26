@@ -36,6 +36,7 @@ BasicSelect.args = {
   options,
   value: "",
   placeholder: "Select an option",
+  label: "Title select",
   ariaLabel: "Basic Select",
 };
 
@@ -45,7 +46,7 @@ PreselectedSelect.args = {
   value: "option2",
   placeholder: "Select an option",
   isClearable: true,
-  title: "Title select",
+  label: "Title select",
   ariaLabel: "Preselected Select",
 };
 
@@ -54,6 +55,7 @@ DisabledSelect.args = {
   options,
   value: "",
   placeholder: "Select an option",
+  label: "Title select",
   disabled: true,
   ariaLabel: "Disabled Select",
 };

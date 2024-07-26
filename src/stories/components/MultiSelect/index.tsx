@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export interface MultiSelectProps {
   options: { value: string; label: string }[];
@@ -8,6 +8,10 @@ export interface MultiSelectProps {
   disabled?: boolean;
   ariaLabel?: string;
   ariaDescribedby?: string;
+  className?: string;
+  labelClassName?: string;
+  label: string;
+  id: string;
 }
 
 export const MultiSelect: React.FC<MultiSelectProps> = ({
@@ -18,6 +22,10 @@ export const MultiSelect: React.FC<MultiSelectProps> = ({
   disabled,
   ariaLabel,
   ariaDescribedby,
+  className,
+  labelClassName,
+  label,
+  id,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOptions, setSelectedOptions] = useState(
@@ -39,8 +47,24 @@ export const MultiSelect: React.FC<MultiSelectProps> = ({
     setSelectedOptions(options.filter((opt) => newValues.includes(opt.value)));
   };
 
+  const handleClickOutside = (event: any) => {
+    if (!event.target.closest(".select")) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className="relative">
+    <div className="select relative">
+      <label htmlFor={id} className={labelClassName}>
+        {label}
+      </label>
       <div
         className={`bg-white border border-gray-300 rounded-md shadow-sm ${
           isOpen ? "rounded-b-none" : ""
@@ -51,7 +75,7 @@ export const MultiSelect: React.FC<MultiSelectProps> = ({
           value={values.join(", ")}
           onChange={(e) => {}}
           placeholder={placeholder}
-          className="w-full pl-3 pr-10 py-2 text-sm leading-5 text-gray-700"
+          className={className}
           onClick={handleToggle}
           disabled={disabled}
           aria-label={ariaLabel}
@@ -60,7 +84,7 @@ export const MultiSelect: React.FC<MultiSelectProps> = ({
         {values.length > 0 && (
           <button
             type="button"
-            className="absolute inset-y-0 right-0 flex items-center pr-2"
+            className={`absolute inset-y-0 right-0 flex items-center pr-2 ${label && "pt-6"}`}
             onClick={() => onChange([])}
           >
             <svg

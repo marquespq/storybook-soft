@@ -1,3 +1,57 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    input {
+      @apply w-full h-10 pl-4 pr-10 text-sm leading-5 text-gray-800;
+      @apply rounded-md border border-gray-200;
+      @apply transition duration-300 ease-in-out;
+      @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
+    }
+  
+    input::placeholder {
+      @apply text-gray-400;
+    }
+  
+    input:focus {
+      @apply shadow-md;
+    }
+  
+    input:disabled {
+      @apply bg-gray-200 cursor-not-allowed;
+    }
+  
+    input[type="checkbox"] {
+      @apply w-4 h-4 text-blue-600;
+      @apply rounded;
+    }
+  
+    input[type="radio"] {
+      @apply w-4 h-4 text-blue-600;
+      @apply rounded-full;
+    }
+    ul {
+        @apply absolute z-10 w-full bg-white border border-gray-300 rounded-b-md shadow-sm;
+        @apply py-2;
+        @apply overflow-y-auto; 
+        @apply max-h-48; 
+      }
+      
+      li {
+        @apply text-sm leading-5 text-gray-700;
+        @apply py-2 px-4;
+        @apply hover:bg-gray-100; 
+        @apply cursor-pointer;
+        @apply transition duration-300 ease-in-out;
+      }
+      
+      li:hover {
+        @apply bg-gray-200; 
+      }
+      
+      li[aria-selected="true"] {
+        @apply bg-gray-300; 
+        @apply font-bold;
+      }
+  }

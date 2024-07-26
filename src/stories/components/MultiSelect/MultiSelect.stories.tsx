@@ -49,6 +49,7 @@ PreselectedMultiSelect.args = {
   values: ["option1", "option3"],
   placeholder: "Select multiple options",
   ariaLabel: "Preselected multi-select",
+  label: "Select multiple",
   ariaDescribedby:
     "Select multiple options from the list, with preselected values",
 };
