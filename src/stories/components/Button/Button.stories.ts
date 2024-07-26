@@ -14,6 +14,19 @@ const meta = {
       control: "select",
       options: ["primary", "secondary", "success", "danger"],
     },
+    size: {
+      control: "select",
+      options: ["small", "medium", "large"],
+    },
+    ariaLabel: {
+      control: "text",
+    },
+    title: {
+      control: "text",
+    },
+    tabIndex: {
+      control: "number",
+    },
   },
   args: { onClick: fn() },
 } satisfies Meta<typeof Button>;
@@ -25,6 +38,8 @@ export const Primary: Story = {
   args: {
     variant: "primary",
     label: "Primary Button",
+    ariaLabel: "Primary Button",
+    title: "Primary Button",
   },
 };
 
@@ -32,6 +47,8 @@ export const Secondary: Story = {
   args: {
     variant: "secondary",
     label: "Secondary Button",
+    ariaLabel: "Secondary Button",
+    title: "Secondary Button",
   },
 };
 
@@ -39,6 +56,8 @@ export const Success: Story = {
   args: {
     variant: "success",
     label: "Success Button",
+    ariaLabel: "Success Button",
+    title: "Success Button",
   },
 };
 
@@ -46,6 +65,8 @@ export const Danger: Story = {
   args: {
     variant: "danger",
     label: "Danger Button",
+    ariaLabel: "Danger Button",
+    title: "Danger Button",
   },
 };
 
@@ -53,6 +74,8 @@ export const Large: Story = {
   args: {
     size: "large",
     label: "Large Button",
+    ariaLabel: "Large Button",
+    title: "Large Button",
   },
 };
 
@@ -60,5 +83,7 @@ export const Small: Story = {
   args: {
     size: "small",
     label: "Small Button",
+    ariaLabel: "Small Button",
+    title: "Small Button",
   },
 };

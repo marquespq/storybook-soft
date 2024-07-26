@@ -8,6 +8,13 @@ const meta: Meta<typeof Section> = {
   parameters: {
     layout: "fullscreen",
   },
+  argTypes: {
+    ariaLabel: {
+      control: {
+        type: "text",
+      },
+    },
+  },
   args: {
     title: "Minha Seção",
   },
@@ -21,5 +28,6 @@ export const Title: Story = {
   args: {
     title: "Titulo teste",
     children: <div>custom children</div>,
+    ariaLabel: "My Section",
   },
 };

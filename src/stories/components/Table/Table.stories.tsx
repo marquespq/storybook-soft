@@ -7,7 +7,9 @@ export default {
   tags: ["autodocs"],
 } as Meta;
 
-const Template: StoryFn<TableProps> = (args: any) => <Table {...args} />;
+const Template: StoryFn<TableProps> = (args: any) => (
+  <Table {...args} aria-label="Table example" />
+);
 
 export const Default = Template.bind({});
 Default.args = {
@@ -64,7 +66,7 @@ ExpandableRows.args = {
   ],
   expandableColumns: ["Name"],
   expandedContent: (row) => (
-    <div>
+    <div aria-label={`Expanded content for ${row[0]}`}>
       <p>Expanded content for {row[0]}</p>
       <ul>
         <li>Detail 1</li>
@@ -87,16 +89,23 @@ WithActionsColumn.args = {
   actionsColumn: {
     label: "Actions",
     actions: (row) => [
-      <button key="edit" onClick={() => console.log(`Edit ${row[0]}`)}>
+      <button
+        key="edit"
+        onClick={() => console.log(`Edit ${row[0]}`)}
+        aria-label={`Edit ${row[0]}`}
+      >
         Edit
       </button>,
-      <button key="delete" onClick={() => console.log(`Delete ${row[0]}`)}>
+      <button
+        key="delete"
+        onClick={() => console.log(`Delete ${row[0]}`)}
+        aria-label={`Delete ${row[0]}`}
+      >
         Delete
       </button>,
     ],
   },
 };
-
 export const WithBothFeatures = Template.bind({});
 WithBothFeatures.args = {
   headers: ["Column 1", "Column 2", "Column 3"],
@@ -106,7 +115,7 @@ WithBothFeatures.args = {
     ["Cell 7", "Cell 8", "Cell 9"],
   ],
   expandedContent: (row) => (
-    <div>
+    <div aria-label={`Expanded content for ${row[0]}`}>
       <p>Expanded content for {row[0]}</p>
       <ul>
         <li>Detail 1</li>
@@ -119,10 +128,18 @@ WithBothFeatures.args = {
   actionsColumn: {
     label: "Actions",
     actions: (row) => [
-      <button key="edit" onClick={() => console.log(`Edit ${row[0]}`)}>
+      <button
+        key="edit"
+        onClick={() => console.log(`Edit ${row[0]}`)}
+        aria-label={`Edit ${row[0]}`}
+      >
         Edit
       </button>,
-      <button key="delete" onClick={() => console.log(`Delete ${row[0]}`)}>
+      <button
+        key="delete"
+        onClick={() => console.log(`Delete ${row[0]}`)}
+        aria-label={`Delete ${row[0]}`}
+      >
         Delete
       </button>,
     ],

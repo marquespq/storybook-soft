@@ -6,6 +6,8 @@ export interface MultiSelectProps {
   onChange: (values: string[]) => void;
   placeholder?: string;
   disabled?: boolean;
+  ariaLabel?: string;
+  ariaDescribedby?: string;
 }
 
 export const MultiSelect: React.FC<MultiSelectProps> = ({
@@ -14,6 +16,8 @@ export const MultiSelect: React.FC<MultiSelectProps> = ({
   onChange,
   placeholder,
   disabled,
+  ariaLabel,
+  ariaDescribedby,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOptions, setSelectedOptions] = useState(
@@ -50,6 +54,8 @@ export const MultiSelect: React.FC<MultiSelectProps> = ({
           className="w-full pl-3 pr-10 py-2 text-sm leading-5 text-gray-700"
           onClick={handleToggle}
           disabled={disabled}
+          aria-label={ariaLabel}
+          aria-describedby={ariaDescribedby}
         />
         {values.length > 0 && (
           <button
@@ -72,6 +78,7 @@ export const MultiSelect: React.FC<MultiSelectProps> = ({
         <ul
           className="absolute z-10 w-full bg-white border border-gray-300 rounded-b-md shadow-sm"
           role="listbox"
+          aria-multiselectable="true"
         >
           {options.map((option) => (
             <li
@@ -80,6 +87,10 @@ export const MultiSelect: React.FC<MultiSelectProps> = ({
                 selectedOptions.includes(option) ? "bg-gray-100" : ""
               }`}
               onClick={() => handleOptionClick(option)}
+              role="option"
+              aria-selected={
+                selectedOptions.includes(option) ? "true" : "false"
+              }
             >
               {option.label}
             </li>

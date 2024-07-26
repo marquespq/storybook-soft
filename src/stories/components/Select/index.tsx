@@ -8,6 +8,7 @@ export interface SelectProps {
   disabled?: boolean;
   isClearable?: boolean;
   title?: string;
+  ariaLabel?: string;
 }
 
 export const Select: React.FC<SelectProps> = ({
@@ -18,6 +19,7 @@ export const Select: React.FC<SelectProps> = ({
   disabled,
   isClearable,
   title,
+  ariaLabel,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -41,6 +43,9 @@ export const Select: React.FC<SelectProps> = ({
         className={`bg-white border border-gray-300 rounded-md shadow-sm ${
           isOpen ? "rounded-b-none" : ""
         }`}
+        role="combobox"
+        aria-label={ariaLabel}
+        aria-expanded={isOpen}
       >
         <input
           type="text"
@@ -50,11 +55,13 @@ export const Select: React.FC<SelectProps> = ({
           className="w-full pl-3 pr-10 py-2 text-sm leading-5 text-gray-700"
           onClick={handleToggle}
           disabled={disabled}
+          aria-autocomplete="list"
+          aria-activedescendant={isOpen ? options[0].value : undefined}
         />
         {isClearable && value && (
           <button
             type="button"
-            className="absolute inset-y-0 right-0 flex items-center pr-2"
+            className="absolute inset-y-0 right-0 flex items-center pr-2 pt-6"
             onClick={handleClear}
           >
             <svg
@@ -78,6 +85,8 @@ export const Select: React.FC<SelectProps> = ({
               key={option.value}
               className="text-sm leading-5 text-gray-700 hover:bg-gray-100"
               onClick={() => handleOptionClick(option.value)}
+              role="option"
+              aria-selected={option.value === value}
             >
               {option.label}
             </li>

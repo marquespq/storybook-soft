@@ -6,6 +6,13 @@ export default {
   title: "Components/Select",
   component: Select,
   tags: ["autodocs"],
+  argTypes: {
+    ariaLabel: {
+      control: {
+        type: "text",
+      },
+    },
+  },
 } as Meta;
 
 const options = [
@@ -29,6 +36,7 @@ BasicSelect.args = {
   options,
   value: "",
   placeholder: "Select an option",
+  ariaLabel: "Basic Select",
 };
 
 export const PreselectedSelect = Template.bind({});
@@ -38,6 +46,7 @@ PreselectedSelect.args = {
   placeholder: "Select an option",
   isClearable: true,
   title: "Title select",
+  ariaLabel: "Preselected Select",
 };
 
 export const DisabledSelect = Template.bind({});
@@ -46,4 +55,5 @@ DisabledSelect.args = {
   value: "",
   placeholder: "Select an option",
   disabled: true,
+  ariaLabel: "Disabled Select",
 };

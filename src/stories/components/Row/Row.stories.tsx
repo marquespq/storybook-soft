@@ -12,6 +12,17 @@ export default {
         options: ["none", "sm", "md", "lg"],
       },
     },
+    ariaLabel: {
+      control: {
+        type: "text",
+      },
+    },
+    ariaRole: {
+      control: {
+        type: "select",
+        options: ["rowgroup", "row", "presentation"],
+      },
+    },
   },
 } as Meta;
 
@@ -25,6 +36,8 @@ Default.args = {
       <div className="w-40 bg-blue-500 h-20">Column 2</div>
     </div>
   ),
+  ariaLabel: "Row of columns",
+  ariaRole: "rowgroup",
 };
 
 export const WithGutters = Template.bind({});
@@ -32,4 +45,6 @@ WithGutters.args = {
   ...Default.args,
   gutters: "md",
   className: "gx-4",
+  ariaLabel: "Row of columns with gutters",
+  ariaRole: "rowgroup",
 };

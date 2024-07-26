@@ -4,12 +4,16 @@ export interface RowProps {
   children: React.ReactNode;
   className?: string;
   gutters?: "none" | "sm" | "md" | "lg";
+  ariaLabel?: string;
+  ariaRole?: string;
 }
 
 export const Row: React.FC<RowProps> = ({
   children,
   className,
   gutters = "none",
+  ariaLabel,
+  ariaRole,
 }) => {
   let gutterClass = "";
   switch (gutters) {
@@ -27,7 +31,11 @@ export const Row: React.FC<RowProps> = ({
   }
 
   return (
-    <div className={`flex flex-wrap ${className} ${gutterClass}`}>
+    <div
+      className={`flex flex-wrap ${className} ${gutterClass}`}
+      aria-label={ariaLabel}
+      role={ariaRole}
+    >
       {children}
     </div>
   );

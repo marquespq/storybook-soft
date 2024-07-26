@@ -24,7 +24,13 @@ const Template: StoryFn<MultiSelectProps> = (args) => {
   };
 
   return (
-    <MultiSelect {...args} values={selectedValues} onChange={handleChange} />
+    <MultiSelect
+      {...args}
+      values={selectedValues}
+      onChange={handleChange}
+      ariaLabel={args.ariaLabel}
+      ariaDescribedby={args.ariaDescribedby}
+    />
   );
 };
 
@@ -33,6 +39,8 @@ BasicMultiSelect.args = {
   options,
   values: [],
   placeholder: "Select multiple options",
+  ariaLabel: "Basic multi-select",
+  ariaDescribedby: "Select multiple options from the list",
 };
 
 export const PreselectedMultiSelect = Template.bind({});
@@ -40,6 +48,9 @@ PreselectedMultiSelect.args = {
   options,
   values: ["option1", "option3"],
   placeholder: "Select multiple options",
+  ariaLabel: "Preselected multi-select",
+  ariaDescribedby:
+    "Select multiple options from the list, with preselected values",
 };
 
 export const DisabledMultiSelect = Template.bind({});
@@ -48,4 +59,6 @@ DisabledMultiSelect.args = {
   values: [],
   placeholder: "Select multiple options",
   disabled: true,
+  ariaLabel: "Disabled multi-select",
+  ariaDescribedby: "Select multiple options from the list, but it's disabled",
 };

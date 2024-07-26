@@ -1,4 +1,3 @@
-// Input.tsx
 import React from "react";
 
 export interface InputProps {
@@ -6,6 +5,9 @@ export interface InputProps {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
   type?: string;
+  id?: string;
+  ariaLabel?: string;
+  ariaDescribedby?: string;
 }
 
 export const Input: React.FC<InputProps> = ({
@@ -13,6 +15,9 @@ export const Input: React.FC<InputProps> = ({
   onChange,
   placeholder = "",
   type = "text",
+  id,
+  ariaLabel,
+  ariaDescribedby,
 }) => (
   <input
     type={type}
@@ -20,5 +25,8 @@ export const Input: React.FC<InputProps> = ({
     onChange={onChange}
     placeholder={placeholder}
     className="border border-gray-300 p-2 rounded"
+    id={id}
+    aria-label={ariaLabel}
+    aria-describedby={ariaDescribedby}
   />
 );

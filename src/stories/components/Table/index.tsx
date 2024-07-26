@@ -121,7 +121,9 @@ export const Table: React.FC<TableProps> = ({
                 {actionsColumn && (
                   <td
                     key={`actions-${rowIndex}`}
-                    className={`px-6 py-4 border-b border-${theme === "dark" ? "gray-600" : "gray-200"} border-r border-l`}
+                    className={`px-6 py-4 border-b border-${
+                      theme === "dark" ? "gray-600" : "gray-200"
+                    } border-r border-l`}
                   >
                     {actionsColumn.actions(row)}
                   </td>
@@ -129,11 +131,20 @@ export const Table: React.FC<TableProps> = ({
                 {expandableColumns?.includes(headers[0]) && (
                   <td
                     key={`expand-${rowIndex}`}
-                    className={`px-6 py-4 border-b border-${theme === "dark" ? "gray-600" : "gray-200"} border-r border-l`}
+                    className={`px-6 py-4 border-b border-${
+                      theme === "dark" ? "gray-600" : "gray-200"
+                    } border-r border-l`}
                   >
                     <button
                       onClick={() => handleExpandRow(rowIndex)}
-                      className={`text-sm text-${theme === "dark" ? "gray-400" : "gray-600"} hover:text-${theme === "dark" ? "gray-200" : "gray-800"}`}
+                      className={`text-sm text-${
+                        theme === "dark" ? "gray-400" : "gray-600"
+                      } hover:text-${
+                        theme === "dark" ? "gray-200" : "gray-800"
+                      }`}
+                      aria-label={`Expand row ${rowIndex}`}
+                      aria-expanded={expandedRows[rowIndex]}
+                      role="button"
                     >
                       {expandedRows[rowIndex] ? "Collapse" : "Expand"}
                     </button>

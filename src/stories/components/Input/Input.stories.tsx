@@ -18,27 +18,39 @@ const Template: StoryFn<InputProps> = (
     args.onChange?.(event);
   };
 
-  return <Input {...args} value={value} onChange={handleChange} />;
+  return (
+    <Input
+      {...args}
+      value={value}
+      onChange={handleChange}
+      aria-label={args.ariaLabel}
+      aria-describedby={args.ariaDescribedby}
+    />
+  );
 };
 
 export const Default = Template.bind({});
 Default.args = {
   placeholder: "Digite algo",
+  ariaLabel: "Default input",
 };
 
 export const WithInitialValue = Template.bind({});
 WithInitialValue.args = {
   value: "Valor inicial",
   placeholder: "Digite algo",
+  ariaLabel: "Input with initial value",
 };
 
 export const PasswordType = Template.bind({});
 PasswordType.args = {
   placeholder: "Senha",
   type: "password",
+  ariaLabel: "Password input",
 };
 
 export const CustomPlaceholder = Template.bind({});
 CustomPlaceholder.args = {
   placeholder: "Digite seu nome",
+  ariaLabel: "Input with custom placeholder",
 };

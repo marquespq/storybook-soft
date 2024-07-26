@@ -24,10 +24,15 @@ export const LoggedIn: Story = {
     user: {
       name: "Jane Doe",
     },
+    ariaLabel: "Logged in header",
   },
 };
 
-export const LoggedOut: Story = {};
+export const LoggedOut: Story = {
+  args: {
+    ariaLabel: "Logged out header",
+  },
+};
 
 export const CustomImage: Story = {
   args: {
@@ -36,5 +41,6 @@ export const CustomImage: Story = {
     },
     imageUrl:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIP1WY07exNBXDdKoy75b5NDZXkfWmE9Y1BQ&s",
+    ariaLabel: "Custom image header",
   },
 };
