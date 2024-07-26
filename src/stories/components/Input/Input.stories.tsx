@@ -18,39 +18,43 @@ const Template: StoryFn<InputProps> = (
     args.onChange?.(event);
   };
 
-  return (
-    <Input
-      {...args}
-      value={value}
-      onChange={handleChange}
-      aria-label={args.ariaLabel}
-      aria-describedby={args.ariaDescribedby}
-    />
-  );
+  return <Input {...args} value={value} onChange={handleChange} />;
 };
 
 export const Default = Template.bind({});
 Default.args = {
+  id: "default-input",
+  label: "Default input",
+  ariaLabel: "Default input label",
+  ariaDescribedby: "default-input-description",
   placeholder: "Digite algo",
-  ariaLabel: "Default input",
 };
 
 export const WithInitialValue = Template.bind({});
 WithInitialValue.args = {
+  id: "initial-value-input",
+  label: "Input with initial value",
+  ariaLabel: "Input with initial value label",
+  ariaDescribedby: "initial-value-input-description",
   value: "Valor inicial",
   placeholder: "Digite algo",
-  ariaLabel: "Input with initial value",
 };
 
 export const PasswordType = Template.bind({});
 PasswordType.args = {
+  id: "password-input",
+  label: "Senha",
+  ariaLabel: "Senha label",
+  ariaDescribedby: "password-input-description",
   placeholder: "Senha",
   type: "password",
-  ariaLabel: "Password input",
 };
 
 export const CustomPlaceholder = Template.bind({});
 CustomPlaceholder.args = {
+  id: "custom-placeholder-input",
+  label: "Nome",
+  ariaLabel: "Nome label",
+  ariaDescribedby: "custom-placeholder-input-description",
   placeholder: "Digite seu nome",
-  ariaLabel: "Input with custom placeholder",
 };
