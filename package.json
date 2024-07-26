@@ -1,7 +1,7 @@
 {
   "name": "react-ui-softscript",
   "private": false,
-  "version": "1.0.4",
+  "version": "1.0.3",
   "type": "module",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
@@ -24,9 +24,7 @@
   "scripts": {
     "dev": "vite",
     "release": "bash ./scripts/release.sh",
-    "types": "react-ui-softscript.d.ts",
-    "build": "tsc && vite build && npm run tailwind && npm run copy-types",
-    "copy-types": "cp react-ui-softscript.d.ts dist/",
+    "build": "tsc && vite build && npm run tailwind",
     "tailwind": "npx tailwindcss -o ./dist/index.css --minify",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
