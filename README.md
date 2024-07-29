@@ -25,4 +25,4 @@ To use storybook-soft in your project, follow these steps:
 
 ## Documentation
 
-For detailed information on the available components and their usage, visit the - [Components Link](https://66a27aa440e683266d789380-ishsrnrxne.chromatic.com/)
+For detailed information on the available components and their usage, visit the - [Components Link](https://66a27aa440e683266d789380-lrykvllvxo.chromatic.com/)
