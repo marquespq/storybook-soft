@@ -78,6 +78,30 @@ ExpandableRows.args = {
   theme: "light",
 };
 
+export const CustomExpandableRows = Template.bind({});
+CustomExpandableRows.args = {
+  headers: ["Name", "Age", "Occupation"],
+  rows: [
+    ["John Doe", "30", "Software Engineer"],
+    ["Jane Doe", "25", "Marketing Manager"],
+    ["Bob Smith", "40", "CEO"],
+  ],
+  expandableColumns: ["Name"],
+  iconNotExpanded: <div>v</div>,
+  iconExpanded: <div>^</div>,
+  expandedContent: (row) => (
+    <div aria-label={`Expanded content for ${row[0]}`}>
+      <p>Expanded content for {row[0]}</p>
+      <ul>
+        <li>Detail 1</li>
+        <li>Detail 2</li>
+        <li>Detail 3</li>
+      </ul>
+    </div>
+  ),
+  theme: "dark",
+};
+
 export const WithActionsColumn = Template.bind({});
 WithActionsColumn.args = {
   headers: ["Column 1", "Column 2", "Column 3"],

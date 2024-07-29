@@ -11,6 +11,8 @@ export interface TableProps {
   };
   className?: string;
   expandedContent: (row: string[]) => React.ReactNode;
+  iconNotExpanded: React.ReactNode;
+  iconExpanded: React.ReactNode;
 }
 
 export const Table: React.FC<TableProps> = ({
@@ -21,6 +23,8 @@ export const Table: React.FC<TableProps> = ({
   actionsColumn,
   className,
   expandedContent,
+  iconNotExpanded,
+  iconExpanded,
 }) => {
   const [expandedRows, setExpandedRows] = useState<any>({});
 
@@ -146,7 +150,13 @@ export const Table: React.FC<TableProps> = ({
                       aria-expanded={expandedRows[rowIndex]}
                       role="button"
                     >
-                      {expandedRows[rowIndex] ? "Collapse" : "Expand"}
+                      {iconExpanded && iconNotExpanded
+                        ? expandedRows[rowIndex]
+                          ? iconExpanded
+                          : iconNotExpanded
+                        : expandedRows[rowIndex]
+                          ? "Collapse"
+                          : "Expand"}
                     </button>
                   </td>
                 )}
