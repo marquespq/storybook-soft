@@ -131,3 +131,21 @@ Default.parameters = {
             `,
   },
 };
+
+export const WithFooter = Template.bind({});
+WithFooter.args = {
+  isOpen: true,
+  onClose: () => console.log("Modal closed"),
+  size: "md",
+  title: "Modal title",
+  children: (
+    <p className="my-4 text-blueGray-500 text-lg leading-relaxed">
+      Your modal content here Your modal content here
+    </p>
+  ),
+  footer: (
+    <p className="p-4 text-blueGray-500 text-lg leading-relaxed">
+      This is the modal footer
+    </p>
+  ),
+};

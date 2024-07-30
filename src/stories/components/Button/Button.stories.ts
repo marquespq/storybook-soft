@@ -87,3 +87,26 @@ export const Small: Story = {
     title: "Small Button",
   },
 };
+
+export const CustomStyle: Story = {
+  args: {
+    label: "Custom Style Button",
+    ariaLabel: "Custom Style Button",
+    title: "Custom Style Button",
+    className: "bg-orange-500 hover:bg-orange-700 text-white",
+  },
+};
+
+export const CustomStyleWithStyle: Story = {
+  args: {
+    label: "Custom Style Button with Style",
+    ariaLabel: "Custom Style Button with Style",
+    title: "Custom Style Button with Style",
+    style: {
+      backgroundColor: "pink",
+      color: "white",
+      padding: "10px 20px",
+      borderRadius: "5px",
+    },
+  },
+};

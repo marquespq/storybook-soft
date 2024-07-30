@@ -9,6 +9,8 @@ export interface ButtonProps {
   title?: string;
   tabIndex?: number;
   onKeyDown?: (event: React.KeyboardEvent<HTMLButtonElement>) => void;
+  className?: string;
+  style?: React.CSSProperties;
 }
 
 export const Button = ({
@@ -20,6 +22,8 @@ export const Button = ({
   tabIndex,
   onKeyDown,
   onClick,
+  className,
+  style,
   ...props
 }: ButtonProps) => {
   const sizeClasses = {
@@ -43,7 +47,8 @@ export const Button = ({
       tabIndex={tabIndex || 0}
       onKeyDown={onKeyDown}
       onClick={onClick}
-      className={`font-sans font-bold rounded-md cursor-pointer inline-block ${sizeClasses[size]} ${variantClasses[variant]}`}
+      className={`font-sans font-bold rounded-md cursor-pointer inline-block ${sizeClasses[size]} ${variantClasses[variant]} ${className}`}
+      style={style} // Adicione a propriedade style
       {...props}
     >
       {label}

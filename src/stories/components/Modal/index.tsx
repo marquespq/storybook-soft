@@ -6,6 +6,7 @@ export interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   size: "sm" | "md" | "lg";
+  footer?: React.ReactNode;
 }
 
 export const Modal: React.FC<ModalProps> = ({
@@ -14,6 +15,7 @@ export const Modal: React.FC<ModalProps> = ({
   isOpen,
   onClose,
   size,
+  footer,
 }) => {
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -88,6 +90,12 @@ export const Modal: React.FC<ModalProps> = ({
                 {title}
               </h3>
               <div id="modal-description">{children}</div>
+              {footer && (
+                <div className="modal-footer">
+                  <hr className="border-gray-200" />
+                  {footer}
+                </div>
+              )}
             </div>
           </div>
         </div>
