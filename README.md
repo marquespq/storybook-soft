@@ -13,7 +13,7 @@ To install react-ui-softscript, run:
 
 ## Usage
 
-To use storybook-soft in your project, follow these steps:
+To use react-ui-softscript in your project, follow these steps:
 
 1 - Import the CSS file at the root of your project:
 
